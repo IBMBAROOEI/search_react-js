@@ -26,8 +26,6 @@ function    Profile()  {
     const displayUsers = User
         .slice(pagesVisited, pagesVisited + usersPerPage)
 
-
-
     const pageCount = Math.ceil(User.length / usersPerPage);
 
     const changePage = ({ selected }) => {
@@ -60,7 +58,7 @@ function    Profile()  {
     };
 
     const search =() =>{
-        axios.get(`http://karanza.ir:8080/search/?name=${keyname}&age=${keyage}&work=${keywork}&family=${keyfamily}&`,
+        axios.get(`http://kaa.ir:8080/search/?name=${keyname}&age=${keyage}&work=${keywork}&family=${keyfamily}&`,
             {
                 headers: {
                     'Content-Type' : "text/html",
@@ -80,7 +78,7 @@ function    Profile()  {
     }
 
     useEffect(() => {
-        axios.get('http://karanza.ir:8080/getall').then(response =>{
+        axios.get('http://kaza.ir:8080/getall').then(response =>{
             setUser(response.data)
         }).catch(er =>{
             console.log(er)
@@ -114,7 +112,7 @@ function    Profile()  {
                         <label >سن</label>
                         <input type="number"  name="age" className="form-control"  value={keyage}  onChange={handelsetage}  />
                     </div>
-                    <div className="col-md-12 ml-5">
+                    <div className="col-md-12 ">
                         <button type="button"
                                 className="btn btn-primary btn-block"
                                 onClick={()=>search()}
