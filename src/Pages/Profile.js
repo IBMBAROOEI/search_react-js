@@ -65,7 +65,7 @@ function    Profile()  {
     };
 
     const search =() =>{
-        axios.get(`http://karanza.ir:8080/search/?name=${keyname}&age=${keyage}&work=${keywork}&family=${keyfamily}&`,
+        axios.get(`http://kar.ir:8080/search/?name=${keyname}&age=${keyage}&work=${keywork}&family=${keyfamily}&`,
             {
                 headers: {
                     'Content-Type' : "text/html",
@@ -86,7 +86,7 @@ function    Profile()  {
     }
 
     useEffect(() => {
-        axios.get('http://karanza.ir:8080/getall').then(response =>{
+        axios.get('http://kar.ir:8080/getall').then(response =>{
             setUser(response.data)
         }).catch(er =>{
             console.log(er)
